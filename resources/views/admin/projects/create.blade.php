@@ -22,6 +22,14 @@
          <label for="cover_image" class="form-label">Immagine</label>
          <input type="file" class="form-control" id="cover_image" name="cover_image" value="{{old('cover_image')}}">
       </div>
+      <div class="mb-3">
+         @foreach ($technologies as $tech)    
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="checkbox" id="{{$tech->name}}" name="technologies[]" value="{{$tech->id}}">
+               <label class="form-check-label" for="{{$tech->name}}">{{$tech->name}}</label>
+            </div>
+         @endforeach
+      </div>
       <button type="submit" class="btn btn-primary">Crea</button>
    </form>
 @endsection
