@@ -8,4 +8,11 @@
        <img src="{{asset("storage/$project->cover_image")}}" alt="{{$project->name}}" class="img-fluid">   
     </div>
     @endif
+    <ul>
+        @foreach ($technologies as $tech)
+            <li>
+                {{$tech->name}}
+            </li>
+        @endforeach
+    </ul>
 @endsection
